@@ -9,9 +9,12 @@
     <input autocomplete="off" autofocus name="x" placeholder="Vards" type="text">
     <select name="y">
         <option disabled selected>Izvēlies vienu</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
+       {% for i in alpha %}
+
+            <option>{{ i }}</option>
+
+       {% endfor %}
+
     </select>
     <br>
     <input type="submit" value="reģistrēties">
