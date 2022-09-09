@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<h1>Register</h1>
+
+<form action="/reg.." method="post">
+    <input autocomplete="off" autofocus name="x" placeholder="Vards" type="text">
+    <select name="y">
+        <option disabled selected>Izvēlies vienu</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <br>
+    <input type="submit" value="reģistrēties">
+
+</form>
+
+{% endblock%}
