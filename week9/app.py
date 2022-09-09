@@ -12,11 +12,11 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/sveicinats", methods=['POST'])
+@app.route("/sveicinats") # use method=["POST"] for passwords etc
 def atbilde():
     x = request.args.get("q", "janis") # input janis if empty form
     y = request.args.get("qq", "jansons") # --``--
-    z = request.form.get("p","password")
+    z = request.args.get("p","password") # use request.form.get for sensitive data ( passwords, ...)
     return render_template("sveiciens.html", pirmais = x, otrais = y, parole = z)
 
 
