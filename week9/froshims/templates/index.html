@@ -7,15 +7,12 @@
 
 <form action="/reg.." method="post">
     <input autocomplete="off" autofocus name="x" placeholder="Vards" type="text">
-    <select name="y">
-        <option disabled selected>Izvēlies vienu</option>
-       {% for i in alpha %}
+    {% for i in alpha %}
 
-            <option>{{ i }}</option>
+        <input name="y" type="checkbox" value= '{{ i }}'> {{ i }}
 
-       {% endfor %}
+    {% endfor %}
 
-    </select>
     <br>
     <input type="submit" value="reģistrēties">
 
