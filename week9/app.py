@@ -20,5 +20,5 @@ def atbilde():
     return render_template("sveiciens.html", pirmais = x, otrais = y, parole = z)
 
 
-#if __name__=='__main__':
-app.run()
+if __name__=='__main__':
+    app.run()
