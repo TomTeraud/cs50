@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<h1>Register</h1>
+
+<form action="/regg" method="post">
+    <input autocomplete="off" autofocus name="vards" placeholder="Vards" type="text">
+    {% for i in cars %}
+
+        <input name="car" type="radio" value= '{{ i }}'> {{ i }}
+
+    {% endfor %}
+
+    <br>
+    <input type="submit" value="reģistrēties">
+
+</form>
+
+{% endblock%}

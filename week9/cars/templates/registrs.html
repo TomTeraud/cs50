@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Reģistrs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Vārds</th>
+                <th>Mašīnas modelis</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in regg %}
+            <tr>
+                <td>{{i}}</td>
+                <td>{{ regg[i] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
