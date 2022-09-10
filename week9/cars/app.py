@@ -13,9 +13,9 @@ CARS = [
 
 @app.route('/')
 def index ():
-    return render_template("index.html", cars=CARS)
+    return render_template("index.html", masinas=CARS)
 
-@app.route("/regg", methods=['POST'])
+@app.route("/registrs", methods=['POST'])
 def regg():
 
     # validate vards
@@ -35,13 +35,12 @@ def regg():
     REGZ [vards] = car
 
     # confirm registration
-    return redirect("/regg")
+    return redirect("/zzz")
 
-print(REGZ)
 
-@app.route("/regg")
-def regz():
-    return render_template("registrs.html", regg=REGZ)
+@app.route("/zzz")
+def x():
+    return render_template("registrs.html", a=REGZ)
 
 if __name__ == "__main__":
     app.run()
