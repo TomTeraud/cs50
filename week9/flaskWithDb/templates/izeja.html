@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+    <h1>tabula</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Vārds</th>
+                <th>augli</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in iz %}
+            <tr>
+                <td>{{i}}</td>
+                <td>{{ iz[i] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

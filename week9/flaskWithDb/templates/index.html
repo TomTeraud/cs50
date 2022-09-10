@@ -2,13 +2,14 @@
 
 {% block body %}
 
-<ul>  
-    
-    {% for i in augli%}:  
-    <li>
-    {{i}}
-    </li>    
-    {% endfor%}
+    <form action="/parbaude" method="post">
 
-</ul>
+        <input type="text" name="vards" placeholder="vards..">
+
+        {% for i in augli %}
+        <input name="auglis" type="radio" value="{{i}}">{{ i }}
+        {% endfor %}
+        <input type="submit" value="iesniegt">
+    </form>
+
 {% endblock %}
