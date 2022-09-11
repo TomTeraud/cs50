@@ -28,13 +28,25 @@ def index():
 
         # TODO: Add the user's entry into the database
 
+        name = request.form.get('vards')
+        month = request.form.get('menesis')
+        day = request.form.get('diena')
+        if name and month and day != 'none':   
+            db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+           
         return redirect("/")
 
     else:
 
         # TODO: Display the entries in the database on index.html
-        
 
-        return render_template("index.html")
+        birthdays = db.execute("SELECT * FROM birthdays")
+        return render_template("index.html", dzimsanasdienas = birthdays)
 
+
+@app.route('/remove', methods=['POST'])
+def remove():
+        id = request.form.get('id')
+        db.execute("DELETE from birthdays WHERE id = ?", id)
+        return redirect("/")
 

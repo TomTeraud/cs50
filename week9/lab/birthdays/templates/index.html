@@ -15,6 +15,12 @@
 
                 <h2>Add a Birthday</h2>
                 <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+                <form action="/" method="post">
+                    <input autocomplete="off" name="vards" placeholder="vārds.." type="text">
+                    <input autocomplete="off" name="menesis" placeholder="mēnesis.." type="text">
+                    <input autocomplete="off" name="diena" placeholder="diena.." type="text">
+                    <input type="submit" value="reģistrēt..">
+                </form> 
             </div>
 
             <div class="section">
@@ -29,6 +35,17 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for row in dzimsanasdienas %}
+                        <tr>
+                            <td>{{row["name"]}}</td>
+                            <td>{{row["month"]}}/{{row["day"]}}
+                                <form action="/remove" method="post">
+                                    <input name="id" type="hidden" value="{{row['id']}}">
+                                    <input type="submit" value="remove..">
+                                </form>                              
+                            </td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
